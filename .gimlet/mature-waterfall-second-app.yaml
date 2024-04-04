@@ -13,6 +13,17 @@ values:
     repository: 127.0.0.1:32447/expressjs-test-app-eaf0
     tag: '{{ .SHA }}'
   imagePullSecrets: []
-  replicas: 1
+  podAnnotations: {}
+  podDisruptionBudgetEnabled: true
+  podLabels: {}
+  replicas: 3
   resources:
+    ignore: false
     ignoreLimits: true
+    limits:
+      cpu: 200m
+      memory: 200Mi
+    requests:
+      cpu: 200m
+      memory: 200Mi
+  spreadAcrossNodes: true
