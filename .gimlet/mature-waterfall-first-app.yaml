@@ -1,0 +1,65 @@
+app: first-app
+env: mature-waterfall
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.64.0
+values:
+  containerPort: 80
+  description: ""
+  documentation: ""
+  gitRepository: nur1210/expressjs-test-app
+  gitSha: '{{ .SHA }}'
+  image:
+    repository: nginx
+    tag: 1.19.3
+  imagePullSecrets: []
+  ingress:
+    annotations: {}
+    host: ""
+    path: /
+    tlsEnabled: false
+  issues: ""
+  livenessProbe:
+    enabled: false
+    path: /
+    settings:
+      failureThreshold: 3
+      initialDelaySeconds: 0
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 3
+  logs: ""
+  metrics: ""
+  name: ""
+  ownerIm: ""
+  ownerName: ""
+  podAnnotations: {}
+  podDisruptionBudgetEnabled: true
+  podLabels: {}
+  probe:
+    enabled: false
+    path: /
+    settings:
+      failureThreshold: 3
+      initialDelaySeconds: 0
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 3
+  replicas: 1
+  resources:
+    ignore: false
+    ignoreLimits: true
+    limits:
+      cpu: 200m
+      memory: 200Mi
+    requests:
+      cpu: 200m
+      memory: 200Mi
+  sealedSecrets: {}
+  secretEnabled: false
+  spreadAcrossNodes: true
+  traces: ""
+  vars: {}
+  volumes: []
